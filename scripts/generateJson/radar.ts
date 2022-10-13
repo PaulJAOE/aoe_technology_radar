@@ -4,6 +4,7 @@ import { readFile } from "fs-extra";
 import highlight from "highlight.js";
 import { marked } from "marked";
 import * as path from "path";
+import { stripHtml } from "string-strip-html";
 
 import {
   FlagType,
@@ -81,6 +82,7 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
           /a href="http/g,
           'a target="_blank" rel="noopener noreferrer" href="http'
         );
+        const text = stripHtml(html).result
         const attributes = checkAttributes(fileName, fm.attributes);
         if (attributes) {
           return {
@@ -88,6 +90,7 @@ const createRevisionsFromFiles = (fileNames: string[]) => {
             ...attributes,
             fileName,
             body: html,
+            info: text,
           } as Revision;
         }
       })

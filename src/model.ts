@@ -39,6 +39,7 @@ export type Revision = ItemAttributes & {
   body: string;
   fileName: string;
   release: string;
+   // TODO add info: string;
 };
 
 export type Quadrant = {

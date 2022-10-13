@@ -81,7 +81,7 @@ export default function PageOverview({
   const handleSearchTermChange = setSearch;
 
   const groups = getFilteredAndGroupedItems();
-
+  
   return (
     <Fadeable leaving={leaving} onLeave={onLeave}>
       <SetTitle title={title} />
@@ -129,6 +129,9 @@ export default function PageOverview({
                           <div className="item__title">
                             {item.title}
                             <Flag item={item} />
+                          </div>
+                          <div>
+                            {item.name}   {/* TODO change to revision.info */}
                           </div>
                         </div>
                         <div className="split__right">

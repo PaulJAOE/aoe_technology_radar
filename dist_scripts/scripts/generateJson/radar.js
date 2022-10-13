@@ -89,6 +89,7 @@ var fs_extra_1 = require("fs-extra");
 var highlight_js_1 = __importDefault(require("highlight.js"));
 var marked_1 = require("marked");
 var path = __importStar(require("path"));
+var string_strip_html_1 = require("string-strip-html");
 var model_1 = require("../../src/model");
 var paths_1 = require("../paths");
 var file_1 = require("./file");
@@ -148,9 +149,10 @@ var createRevisionsFromFiles = function (fileNames) {
             var fm = (0, front_matter_1.default)(data);
             var html = (0, marked_1.marked)(fm.body.replace(/\]\(\//g, "](".concat(publicUrl, "/")));
             html = html.replace(/a href="http/g, 'a target="_blank" rel="noopener noreferrer" href="http');
+            var text = (0, string_strip_html_1.stripHtml)(html).result;
             var attributes = checkAttributes(fileName, fm.attributes);
             if (attributes) {
-                return __assign(__assign(__assign({}, itemInfoFromFilename(fileName)), attributes), { fileName: fileName, body: html });
+                return __assign(__assign(__assign({}, itemInfoFromFilename(fileName)), attributes), { fileName: fileName, body: html, info: text });
             }
         });
     }));
