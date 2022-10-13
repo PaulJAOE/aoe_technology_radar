@@ -1,5 +1,32 @@
 # Changelog
 
+## Version v3.3.5 (2022-10-13)
+
+### Fixes
+
+- use same order of quadrants for radar and grid visualization (36b63db1)
+- **nth-check:** remove vulnerability by overriding @svgr/webpack (97a74bb1)
+
+### Chores and tidying
+
+- **deps:** update dependency @typescript-eslint/parser to v5.40.0 (c119d67f)
+- **deps:** update dependency react-tooltip to v4.3.0 (c8a5c725)
+- **deps:** update dependency sass to v1.55.0 (29fd1506)
+- **deps:** update dependency eslint-plugin-react to v7.31.10 (4b7fab4e)
+- **deps:** update dependency eslint to v8.25.0 (bbb4b15c)
+- **deps:** update dependency yaml to v2.1.3 (c223a9b3)
+- **deps:** update dependency marked to v4.1.1 (d6ce0f0b)
+- **deps:** update dependency typescript to v4.8.4 (5bb99efc)
+- **deps:** update dependency @types/react to v18.0.21 (474e9556)
+- **deps:** update dependency react-router-dom to v6.4.2 (3c83b3f3)
+- **deps:** update dependency sanitize-html to v2.7.2 (81ac9bf6)
+- **deps:** update dependency @types/jest to v29.1.2 (44656d0a)
+
+### Other
+
+- Add Run the Prepare Script (ee0bec6c)
+- No longer necessary to have quadrant subfolders? (1e814249)
+
 ## Version v3.3.4 (2022-09-13)
 
 ### Fixes
